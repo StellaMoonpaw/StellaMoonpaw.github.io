@@ -277,67 +277,27 @@
             max-width: 860px;
         }
 
-        /* 头像光环效果 */
+        /* 头像外圈 */
         .avatar-wrapper {
             position: relative;
             display: inline-block;
             margin-bottom: 40px;
         }
 
-        .avatar-glow {
-            position: absolute;
-            inset: -4px;
-            background: var(--accent-gradient);
-            border-radius: 50%;
-            opacity: 0;
-            filter: blur(20px);
-            transition: var(--transition-smooth);
-            animation: avatar-pulse 4s ease-in-out infinite;
-        }
-
-        @keyframes avatar-pulse {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.05); }
-        }
-
-        .avatar-ring {
-            position: absolute;
-            inset: -3px;
-            background: var(--accent-gradient);
-            border-radius: 50%;
-            padding: 3px;
-            animation: ring-rotate 8s linear infinite;
-        }
-
-        @keyframes ring-rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .avatar-ring::before {
-            content: '';
-            position: absolute;
-            inset: 3px;
-            background: var(--bg-primary);
-            border-radius: 50%;
-        }
-
         .github-avatar {
             width: 130px;
             height: 130px;
             border-radius: 50%;
-            position: relative;
-            z-index: 2;
-            transition: var(--transition-smooth);
+            display: block;
             object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.15);
+            box-sizing: border-box;
+            transition: var(--transition-smooth);
         }
 
         .avatar-wrapper:hover .github-avatar {
-            transform: scale(1.05);
-        }
-
-        .avatar-wrapper:hover .avatar-glow {
-            opacity: 0.6;
+            border-color: rgba(10, 132, 255, 0.5);
+            transform: scale(1.03);
         }
 
         .hero-eyebrow {
@@ -1204,8 +1164,6 @@
         <section class="hero visible">
             <div class="hero-content">
                 <div class="avatar-wrapper">
-                    <div class="avatar-glow"></div>
-                    <div class="avatar-ring"></div>
                     <img src="https://github.com/StellaMoonpaw.png" alt="Avatar" class="github-avatar">
                 </div>
                 
